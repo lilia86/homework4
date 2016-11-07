@@ -1,0 +1,20 @@
+{
+    "name": "vendor/database",
+    "authors": [
+        {
+            "name": "lilia86",
+            "email": "liliagirl@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vendor\\DataBase\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/routing": "^3.1",
+        "twig/twig": "^1.27",
+        "symfony/http-foundation": "^3.1",
+        "fzaninotto/faker": "^1.6"
+    }
+}
