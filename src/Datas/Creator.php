@@ -38,7 +38,7 @@ class Creator
     surname VARCHAR(30) NOT NULL,
     depatment INT(6) UNSIGNED,
     PRIMARY KEY(id),
-    FOREIGN KEY (depatment) REFERENCES depatments(id)    
+    FOREIGN KEY (depatment) REFERENCES departments(id)    
     ) ENGINE=InnoDB CHARACTER SET=UTF8;';
 
     private $subjectTable = 'CREATE TABLE subjects (
@@ -46,7 +46,7 @@ class Creator
     name VARCHAR(30) NOT NULL,
     depatment INT(6) UNSIGNED,
     PRIMARY KEY(id),
-    FOREIGN KEY (depatment) REFERENCES depatments(id)    
+    FOREIGN KEY (depatment) REFERENCES departments(id)    
     ) ENGINE=InnoDB CHARACTER SET=UTF8;';
 
     private $homeworkTable = 'CREATE TABLE homeworks (
