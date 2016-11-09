@@ -17,7 +17,14 @@ class Render
     {
         $loader = new \Twig_Loader_Filesystem('src/View/templates');
         $twig = new \Twig_Environment($loader);
-        $template = $twig->loadTemplate('template.html');
+        $template = $twig->loadTemplate('univ.html');
+        echo $template->render(array('data' => $values));
+    }
+    public function getDepView($values)
+    {
+        $loader = new \Twig_Loader_Filesystem('src/View/templates');
+        $twig = new \Twig_Environment($loader);
+        $template = $twig->loadTemplate('depart.html');
         echo $template->render(array('data' => $values));
     }
 }

@@ -27,41 +27,41 @@ class Filler
         $this->homeworkDatas = array();
         $this->teachers_studentsDatas = array();
         $this->students_homeworksDatas = array();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $this->universityDatas[$i][0] = $faker->company;
             $this->universityDatas[$i][1] = $faker->city;
             $this->universityDatas[$i][2] = $faker->email;
         }
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 20; ++$i) {
             $this->departmentDatas[$i][0] = $faker->company;
             $this->departmentDatas[$i][1] = $faker->numberBetween($min = 1, $max = 10);
         }
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; ++$i) {
             $this->studentDatas[$i][0] = $faker->firstName;
             $this->studentDatas[$i][1] = $faker->lastName;
             $this->studentDatas[$i][2] = $faker->numberBetween($min = 1, $max = 10);
             $this->studentDatas[$i][3] = $faker->email;
             $this->studentDatas[$i][4] = $faker->phoneNumber;
         }
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $this->teacherDatas[$i][0] = $faker->firstName;
             $this->teacherDatas[$i][1] = $faker->lastName;
             $this->teacherDatas[$i][2] = $faker->numberBetween($min = 1, $max = 20);
         }
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 20; ++$i) {
             $this->subjectDatas[$i][0] = $faker->word;
             $this->subjectDatas[$i][1] = $faker->numberBetween($min = 1, $max = 20);
         }
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; ++$i) {
             $this->homeworkDatas[$i][0] = $faker->word;
             $this->homeworkDatas[$i][1] = $faker->numberBetween($min = 1, $max = 20);
         }
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; ++$i) {
             $this->teachers_studentsDatas[$i][0] = $faker->numberBetween($min = 1, $max = 10);
             $this->teachers_studentsDatas[$i][1] = $faker->numberBetween($min = 1, $max = 50);
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; ++$i) {
             $this->students_homeworksDatas[$i][0] = $faker->numberBetween($min = 1, $max = 50);
             $this->students_homeworksDatas[$i][1] = $faker->numberBetween($min = 1, $max = 50);
             $this->students_homeworksDatas[$i][2] = true;
@@ -100,7 +100,7 @@ class Filler
         }
         foreach ($this->students_homeworksDatas as $key => $val) {
             $this->mysqli->query("INSERT INTO students_homeworks (students, homeworks, pass) 
-                    VALUES ('" .$val[0]."','".$val[1]."')");
+                    VALUES ('" .$val[0]."','".$val[1]."','".$val[2]."')");
         }
         $this->mysqli->close();
     }

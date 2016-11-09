@@ -15,7 +15,7 @@ class Creator
 
     private $departmentTable = 'CREATE TABLE departments (
     id INT(6) UNSIGNED AUTO_INCREMENT, 
-    name VARCHAR(30) NOT NULL, 
+    dep_name VARCHAR(30) NOT NULL, 
     univ_id INT(6) UNSIGNED, 
     PRIMARY KEY(id),
     FOREIGN KEY (univ_id) REFERENCES universities(id)    

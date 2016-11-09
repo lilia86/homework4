@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 $collection = new RouteCollection();
-$collection->add('main', new Route('/', array(
+$collection->add('main', new Route('/c', array(
     'controller' => 'Vendor\DataBase\Controllers\FirstPageController',
     'action' => 'getMainPage',
 )));
@@ -21,9 +21,17 @@ $collection->add('fill', new Route('/fill', array(
     'controller' => 'Vendor\DataBase\Datas\Filler',
     'action' => 'insertValues',
 )));
-$collection->add('findAll', new Route('/universities', array(
+$collection->add('findUniv', new Route('/universities', array(
     'controller' => 'Vendor\DataBase\Controllers\UniversityController',
     'action' => 'allUniversities',
+)));
+$collection->add('insertUniv', new Route('/addUniv', array(
+    'controller' => 'Vendor\DataBase\Controllers\UniversityController',
+    'action' => 'insertUniversities',
+)));
+$collection->add('findDep', new Route('/findDep', array(
+    'controller' => 'Vendor\DataBase\Controllers\DepartmentController',
+    'action' => 'allDepartment',
 )));
 $context = new RequestContext();
 $request = Request::createFromGlobals();

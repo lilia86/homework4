@@ -16,4 +16,12 @@ class UniversityController
         $render = new Render();
         $render->getUnivView($values);
     }
+    public function insertUniversities()
+    {
+        $ob = new Universities();
+        $ob->insert();
+        $values = $ob->findAll();
+        $render = new Render();
+        $render->getUnivView($values);
+    }
 }
