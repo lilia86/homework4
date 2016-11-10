@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+{% block container %}
+    <h1>Universities</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>homework</th>
+            <th>subject</th>
+            <th>student</th>
+            <th>pass</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{ d.homework|escape }}</td>
+            <td>{{ d.subject|escape }}</td>
+            <td>{{ d.student|escape }}</td>
+            <td>{{ d.pass|escape }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

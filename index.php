@@ -29,9 +29,17 @@ $collection->add('insertUniv', new Route('/addUniv', array(
     'controller' => 'Vendor\DataBase\Controllers\UniversityController',
     'action' => 'insertUniversities',
 )));
-$collection->add('findDep', new Route('/findDep', array(
+$collection->add('findDep', new Route('/departments', array(
     'controller' => 'Vendor\DataBase\Controllers\DepartmentController',
     'action' => 'allDepartment',
+)));
+$collection->add('findStud', new Route('/students', array(
+    'controller' => 'Vendor\DataBase\Controllers\StudentController',
+    'action' => 'allStudents',
+)));
+$collection->add('findHomeW', new Route('/homeworks', array(
+    'controller' => 'Vendor\DataBase\Controllers\HomeworksController',
+    'action' => 'allHomeworks',
 )));
 $context = new RequestContext();
 $request = Request::createFromGlobals();

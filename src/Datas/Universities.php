@@ -11,14 +11,18 @@ class Universities
     }
     public function findAll()
     {
-        $values = $this->mysqli->query('SELECT * FROM universities');
+        $values = $this->mysqli->query('SELECT universities.name, departments.dep_name, teachers.t_name
+                                        FROM universities 
+                                        JOIN departments ON universities.id=departments.univ_id
+                                        JOIN teachers ON departments.id=teachers.depatment                                        
+                                        ORDER BY universities.name, departments.dep_name');
         $resultarray = array();
         if (mysqli_num_rows($values) > 0) {
             // output data of each row
             for ($i = 0; $row = mysqli_fetch_assoc($values); ++$i) {
                 $resultarray[$i]['name'] = $row['name'];
-                $resultarray[$i]['town'] = $row['town'];
-                $resultarray[$i]['email'] = $row['email'];
+                $resultarray[$i]['department'] = $row['dep_name'];
+                $resultarray[$i]['teachers'] = $row['t_name'];
             }
         } else {
             echo '0 results';
@@ -85,5 +89,6 @@ class Universities
         }
 
         return $resultarray;
+        $this->mysqli->close();
     }
 }

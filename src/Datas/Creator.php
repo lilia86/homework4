@@ -23,7 +23,7 @@ class Creator
 
     private $studentTable = 'CREATE TABLE students (
     id INT(6) UNSIGNED AUTO_INCREMENT, 
-    name VARCHAR(30) NOT NULL,
+    stud_name VARCHAR(30) NOT NULL,
     surname VARCHAR(30),
     univ_id INT(6) UNSIGNED,
     email VARCHAR(50), 
@@ -34,7 +34,7 @@ class Creator
 
     private $teacherTable = 'CREATE TABLE teachers (
     id INT(6) UNSIGNED AUTO_INCREMENT, 
-    name VARCHAR(30) NOT NULL,
+    t_name VARCHAR(30) NOT NULL,
     surname VARCHAR(30) NOT NULL,
     depatment INT(6) UNSIGNED,
     PRIMARY KEY(id),
@@ -43,7 +43,7 @@ class Creator
 
     private $subjectTable = 'CREATE TABLE subjects (
     id INT(6) UNSIGNED AUTO_INCREMENT, 
-    name VARCHAR(30) NOT NULL,
+    sub_name VARCHAR(30) NOT NULL,
     depatment INT(6) UNSIGNED,
     PRIMARY KEY(id),
     FOREIGN KEY (depatment) REFERENCES departments(id)    
@@ -51,7 +51,7 @@ class Creator
 
     private $homeworkTable = 'CREATE TABLE homeworks (
     id INT(6) UNSIGNED AUTO_INCREMENT, 
-    name VARCHAR(30) NOT NULL,
+    hw_name VARCHAR(30) NOT NULL,
     subject INT(6) UNSIGNED,
     PRIMARY KEY(id),
     FOREIGN KEY (subject) REFERENCES subjects(id)    

@@ -67,7 +67,7 @@ class Departments
 
     public function update($univ_data, $id)
     {
-        $this->mysqli->query("UPDATE universities SET university = '.$univ_data.' 
+        $this->mysqli->query("UPDATE departments SET university = '.$univ_data.' 
                     WHERE id = '.$id.'");
         $this->mysqli->close();
     }
