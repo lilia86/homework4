@@ -1,0 +1,23 @@
+{%extends 'template.html'%}
+
+{%block container%}
+    <h1>Universities</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>name</th>
+            <th>lastname</th>
+            <th>email</th>
+            <th>university</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{ d.name|escape }}</td>
+            <td>{{ d.surname|escape }}</td>
+            <td>{{ d.email|escape }}</td>
+            <td>{{ d.univ|escape }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{%endblock%}

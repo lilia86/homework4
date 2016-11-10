@@ -1,0 +1,13 @@
+{%extends 'template.html'%}
+
+{%block container%}
+    <h1>Create your data base</h1>
+
+    <button><a href="index.php/create">Add data base structura</a></button>
+    <button><a href="index.php/fill">Fill data base with values</a></button>
+
+    <p><a href="/universities">Show universities {{ data }}</a></p>
+    <p><a href="/departments">Show departments</a></p>
+    <p><a href="/students">Show students</a></p>
+    <p><a href="/homeworks">Show homeworks</a></p>
+{%endblock%}
