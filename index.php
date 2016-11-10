@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 $collection = new RouteCollection();
-$collection->add('main', new Route('/c', array(
+$collection->add('main', new Route('/', array(
     'controller' => 'Vendor\DataBase\Controllers\FirstPageController',
     'action' => 'getMainPage',
 )));
